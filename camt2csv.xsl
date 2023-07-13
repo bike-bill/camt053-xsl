@@ -17,7 +17,7 @@
 
 <xsl:template match="/camt:Document/camt:BkToCstmrStmt/camt:Stmt">
 <xsl:for-each select="camt:Ntry">
-<xsl:value-of select="camt:BookgDt/camt:Dt"/>,<xsl:value-of select="camt:ValDt/camt:Dt"/>,"<xsl:value-of select="camt:AcctSvcrRef"/>","<xsl:value-of select="camt:AddtlNtryInf"/>",<xsl:if test="camt:CdtDbtInd != 'CRDT'">-</xsl:if><xsl:value-of select="camt:Amt"/><xsl:text>&#xD;&#xA;</xsl:text>
+<xsl:value-of select="camt:BookgDt/camt:Dt"/>,<xsl:value-of select="camt:ValDt/camt:Dt"/>,"<xsl:value-of select="camt:NtryDtls/camt:TxDtls/camt:RltdPties/camt:Dbtr/camt:Nm"/>","<xsl:value-of select="camt:AcctSvcrRef"/>","<xsl:value-of select="camt:AddtlNtryInf"/>",<xsl:if test="camt:CdtDbtInd != 'CRDT'">-</xsl:if><xsl:value-of select="camt:Amt"/>,"<xsl:value-of select="camt:Amt/@Ccy"/>"<xsl:text>&#xD;&#xA;</xsl:text>
 </xsl:for-each>
 </xsl:template>
 
